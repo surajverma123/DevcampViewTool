@@ -15,4 +15,8 @@ module ApplicationHelper
             content_tag(:p, greeting, class: "source-greeting")
         end
     end
+
+    def copyright_generator
+        DevcampViewToolToolVerma::Renderer.copyright "Suraj Verma", "All right reservered"
+    end
 end
