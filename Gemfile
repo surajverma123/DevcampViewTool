@@ -20,6 +20,10 @@ gem 'bootstrap', '~> 4.1.3'
 gem 'jquery-rails'
 # petergate
 gem 'petergate', '~> 2.0', '>= 2.0.1'
+#font awesome icon
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.4'
+#kaminiray gem for pagination
+gem 'kaminari', '~> 1.1', '>= 1.1.1'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import "font-awesome";
 /*
  * Globals
  */
@@ -166,3 +167,12 @@
     margin-bottom: 0;
   }
   
+
+  /*
+  *
+  *custome style
+  *
+  */
+  .social-links li {
+    font-size: 2.5em;
+  }
