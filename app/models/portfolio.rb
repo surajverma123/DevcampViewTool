@@ -8,6 +8,10 @@ class Portfolio < ApplicationRecord
     end
     scope :ruby_on_rails_portfolio_items, -> { where(subtitle: "Ruby on Rails")}
     after_initialize :set_defaults
+    
+    def self.by_position
+        order("position ASC")
+    end
 
     def set_defaults
         self.main_image ||= Placeholder.image_generatore(height: '600', width: '400')

@@ -46,6 +46,8 @@ gem 'devcamp_view_tool_tool_verma', git: 'https://github.com/surajverma123/ruby-
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'friendly_id', '~> 5.2.4'
 gem 'devise', '~> 4.5'
+#jquery ui rails
+gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
