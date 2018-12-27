@@ -48,6 +48,12 @@ gem 'friendly_id', '~> 5.2.4'
 gem 'devise', '~> 4.5'
 #jquery ui rails
 gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
+
+#carrierwave
+gem 'carrierwave', '~> 1.3'
+gem 'mini_magick', '~> 4.9', '>= 4.9.2'
+gem 'carrierwave-aws', '~> 1.3'
+gem 'dotenv-rails', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
