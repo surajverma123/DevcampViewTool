@@ -16,16 +16,15 @@ class PortfoliosController < ApplicationController
 
     def new
         @portfolio_item = Portfolio.new
-        3.times { @portfolio_item.technologies.build }
     end
     def create
-        @portfolio = Portfolio.new(portfolio_params)
+        @portfolio_item = Portfolio.new(portfolio_params)
         respond_to do |format|
-        if @portfolio.save
-            format.html { redirect_to portfolios_path, notice: 'Portfolio was successfully created.' }
-        else
-            format.html { render :new }
-        end
+            if @portfolio_item.save
+                format.html { redirect_to portfolios_path, notice: 'Portfolio was successfully created.' }
+            else
+                format.html { render :new }
+            end
         end
     end
 
