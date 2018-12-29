@@ -1,7 +1,10 @@
 <div class="col-sm-8 blog-main">
-  <%= paginate @blogs %>
-  <%= render @blogs %>
-  <%= paginate @blogs %>
+  <h1><%= @topic.title %></h1>
+  <% if @blogs.length > 0 %>
+    <%= render @blogs %>
+  <% else %>
+    <p>No blog associated this topic. pleae go and make some blogs related to <%= @topic.title %></p>
+  <% end%>
 </div>
 
 
