@@ -11,9 +11,11 @@
             <% @portfolio_item.technologies.each do |t|  %>
                 <p> <%= t.name %></p>
             <% end %>
-            <div>
-                <%= link_to "Edit", edit_portfolio_path( @portfolio_item), class: "btn btn-danger" %>
-            </div>
+            <% if logged_in?(:admin) %>
+                <div>
+                    <%= link_to "Edit", edit_portfolio_path( @portfolio_item), class: "btn btn-danger" %>
+                </div>
+            <% end %>
         </div>
     </div>
 </div>

@@ -1,6 +1,5 @@
 class CommentsController < ApplicationController
     def create
-        binding.pry
         @comment = current_user.comments.build(comment_params)
     end
     private

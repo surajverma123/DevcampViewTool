@@ -1,11 +1,12 @@
 class TopicsController < ApplicationController
+  before_action :set_topic, only: [:show, :edit, :update, :destroy]
+
   layout "blog"
   def index
     @topics = Topic.all
   end
 
   def show
-    @topic = Topic.find(params[:id])
     if logged_in?(:admin)
       @blogs = @topic.blogs.recent.page(params[:page]).per(5)
     else
@@ -21,20 +22,24 @@ class TopicsController < ApplicationController
     @topic = Topic.new(topic_params)
     respond_to do |format|
       if @topic.save
-        binding.pry
         format.html { redirect_to @topic, notice: 'topic was successfully created.' }
       else
-        binding.pry
         format.html { render :new }
       end
     end
   end
   def edit
-    @topic = Topic.find(params[:id])
+  end
+
+  def destroy
+    @topic.destroy
+
+    respond_to do |format|
+      format.html { redirect_to topics_url, notice: 'Topic was successfully destroyed.' }
+    end
   end
 
   def update
-    @topic = Topic.find(params[:id])
     respond_to do |format|
       if @topic.update(topic_params)
         format.html { redirect_to @topic, notice: 'Topic was successfully updated.' }
@@ -48,4 +53,9 @@ class TopicsController < ApplicationController
   def topic_params
     params.require(:topic).permit(:title)
   end
+
+  def set_topic
+    @topic = Topic.find(params[:id])
+  end
+
 end
