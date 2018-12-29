@@ -16,6 +16,7 @@ class TopicsController < ApplicationController
   def new
     @topic = Topic.new
   end
+
   def create
     @topic = Topic.new(topic_params)
     respond_to do |format|
@@ -25,6 +26,20 @@ class TopicsController < ApplicationController
       else
         binding.pry
         format.html { render :new }
+      end
+    end
+  end
+  def edit
+    @topic = Topic.find(params[:id])
+  end
+
+  def update
+    @topic = Topic.find(params[:id])
+    respond_to do |format|
+      if @topic.update(topic_params)
+        format.html { redirect_to @topic, notice: 'Topic was successfully updated.' }
+      else
+        format.html { render :edit }
       end
     end
   end
