@@ -53,6 +53,21 @@ module ApplicationHelper
         ]
     end
 
+    def skills_utilized_option
+        [
+            {value: 10},
+            {value: 20},
+            {value: 30},
+            {value: 40},
+            {value: 50},
+            {value: 60},
+            {value: 70},
+            {value: 80},
+            {value: 90},
+            {value: 100},
+        ]
+    end
+
     def nav_helper style, tag_type
         nav_links = ''
         nav_items.each do |item|
