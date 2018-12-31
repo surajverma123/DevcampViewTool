@@ -1,12 +1,16 @@
-<h1>About me </h1>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <%= image_tag "profile.png", alt: "Profile image" %>
-    </div>
-
-    <div class="col-md-8">
-        <h1><%= current_user.name.capitalize %></h1>
-        <p>A website content writer or web content writer is a person who specializes in providing relevant content for websites. Every website has a specific target audience and requires the most relevant content. Content should contain keywords aimed towards improving a website's SEO</p>    
+<div class="app-card-container">
+    <div class="card">
+        <h1>About me </h1>
+        <hr />
+        <div class="row">
+            <div class="col-md-4">
+                <%= image_tag "profile.png", alt: "Profile image", class: "profile-img" %>
+            </div>
+        
+            <div class="col-md-8">
+                <h1><%= current_user.name.capitalize %></h1>
+                <p>A website content writer or web content writer is a person who specializes in providing relevant content for websites. Every website has a specific target audience and requires the most relevant content. Content should contain keywords aimed towards improving a website's SEO</p>    
+            </div>
+        </div>
     </div>
 </div>
