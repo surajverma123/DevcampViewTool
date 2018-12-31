@@ -1,0 +1,21 @@
+<div class="skills">
+<%= link_to "add skills", new_skill_path, class: "btn btn-primary add-skills-button" %>
+<% @skills.each do |skill| %>
+    <div class="skill">
+        <div>
+            <h4> <%= skill.title %> </h4>
+            <p> <%= link_to "Edit", edit_skill_path(skill) %> </p>
+        </div>
+        <div class="progress">
+            <div 
+                class="progress-bar progress-bar-striped bg-warning"
+                role="progressbar"
+                aria-valuenow="<%= skill.percent_utilized%>"
+                aria-valuemax="100"
+                style="width: <%= skill.percent_utilized %>%"
+            >
+            </div>
+        </div>
+    </div>
+    <% end %>
+</div>

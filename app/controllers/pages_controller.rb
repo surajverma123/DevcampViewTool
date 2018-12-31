@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   end
 
   def about
-    @skills = Skill.all
+    @skills = current_user.skills
   end
 
   def contact
